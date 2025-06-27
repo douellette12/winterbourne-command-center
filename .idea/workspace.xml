@@ -4,72 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c27e7a5-0041-4493-baa9-61cbf9072d87" name="Changes" comment="feat: refactor to meal plan and add data models">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/HomeCommandCenter.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/dashboard/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/dashboard/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/dashboard/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/dashboard/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/dashboard/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/dashboard/templates/dashboard/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/dashboard/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/dashboard/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/dashboard/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/house_dashboard/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/house_dashboard/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/house_dashboard/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/house_dashboard/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/house_dashboard/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/migrations/0002_ingredient_meal_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/grocery_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/groceryitem_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/item_list_item.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/meal_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templatetags/custom_filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/management/commands/scan_lan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/templates/network/device_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/network/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/routines/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/routines/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/routines/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/routines/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/routines/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/routines/templates/routines/routines.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/routines/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/routines/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/routines/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/static/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/static/js/grocery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/static/js/network.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/static/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house_dashboard/templates/base.html" afterDir="false" />
+    <list default="true" id="4c27e7a5-0041-4493-baa9-61cbf9072d87" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/groceries/modals/add_modal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/groceries/modals/delete_modal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/groceries/modals/edit_modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/grocery_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/groceries/grocery_list_partial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/groceryitem_confirm_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/item_list_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/groceries/item_list_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/meal_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/meal_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house_dashboard/mealplan/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/house_dashboard/mealplan/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house_dashboard/mealplan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/house_dashboard/mealplan/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house_dashboard/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/house_dashboard/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house_dashboard/static/js/grocery.js" beforeDir="false" afterPath="$PROJECT_DIR$/house_dashboard/static/js/grocery.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "douellette12"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/douellette12/winterbourne-command-center.git",
+    "accountId": "c60fe6bd-f5b6-4eec-a628-23ae81f4addb"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -109,6 +68,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/house_dashboard/mealplan/templates/mealplan/groceries" />
       <recent name="$PROJECT_DIR$/house_dashboard/static/js" />
       <recent name="$PROJECT_DIR$/house_dashboard/network/static/network" />
       <recent name="$PROJECT_DIR$/house_dashboard/templates" />
@@ -130,10 +90,20 @@
       <option name="presentableId" value="Default" />
       <updated>1750849182173</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1751044227828</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751044227828</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: refactor to meal plan and add data models" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor to meal plan and add data models" />
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
 </project>

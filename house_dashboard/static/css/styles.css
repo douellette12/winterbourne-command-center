@@ -42,3 +42,11 @@ body {
 .text-decoration-line-through {
   transition: all 0.2s ease;
 }
+
+.modal.show {
+  z-index: 1060;
+}
+.offcanvas-backdrop {
+  z-index: 1040;
+}
+

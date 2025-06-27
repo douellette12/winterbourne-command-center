@@ -14,6 +14,47 @@ function getCookie(name) {
   return cookieValue;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('grocery-add-form');
+  const itemList = document.getElementById('active-items'); // your UL element
+
+  form?.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    fetch(form.action, {
+      method: 'POST',
+      headers: {
+        'X-CSRFToken': csrftoken,
+      },
+      body: formData,
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          const li = document.createElement('li');
+          li.className = 'list-group-item';
+          li.innerHTML = `
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input toggle-complete me-2" data-item-id="${data.id}">
+              <label class="form-check-label">${data.title}</label>
+            </div>
+          `;
+          itemList.appendChild(li);
+          form.reset();
+          const modal = bootstrap.Modal.getInstance(document.getElementById('groceryModal'));
+          modal.hide();
+        } else {
+          alert(data.error || 'Error adding item');
+        }
+      });
+  });
+});
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   document.body.addEventListener('click', function (e) {
     if (e.target.classList.contains('toggle-complete')) {

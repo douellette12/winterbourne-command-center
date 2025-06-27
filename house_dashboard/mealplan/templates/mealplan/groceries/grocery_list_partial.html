@@ -1,0 +1,23 @@
+{% block content %}
+
+<ul class="list-group my-4" id="active-items">
+{% for item in active_items %}
+  {% if not item.completed %}
+    {% include "mealplan/groceries/item_list_item.html" with item=item %}
+  {% endif %}
+  {% empty %}
+{% endfor %}
+</ul>
+<button id="show-completed-btn" class="btn btn-sm btn-outline-primary" onclick="showCompletedSection()">Show Completed Items</button>
+<div style="display: none;" id="completed-section">
+  <h2 class="my-4">Completed</h2>
+    <ul class="list-group" id="completed-items">
+      {% for item in completed_items %}
+        {% if item.completed %}
+          {% include "mealplan/groceries/item_list_item.html" with item=item %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

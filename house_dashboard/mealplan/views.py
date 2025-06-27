@@ -1,21 +1,29 @@
 from django.shortcuts import get_object_or_404
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DeleteView
-from django.views.generic.edit import FormMixin, UpdateView
+from django.views.generic import ListView, DeleteView, TemplateView
+from django.views.generic.edit import FormMixin, UpdateView, CreateView
 from .forms import GroceryItemForm
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import csrf_exempt  # or use CSRF token via JS
+from django.views.decorators.csrf import csrf_exempt
 from .models import GroceryItem, Meal
 
 
-class MealPlanView(ListView):
-    model = Meal
+class MealPlanView(TemplateView):
+    template_name = "mealplan/meal_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["meals"] = Meal.objects.all().order_by("date_planned")
+        context["active_items"] = GroceryItem.objects.filter(completed=False)
+        context["completed_items"] = GroceryItem.objects.filter(completed=True)
+        return context
+
 
 
 @require_POST
-@csrf_exempt  # You can remove this if you use a real CSRF token via JS
+@csrf_exempt
 def toggle_grocery_item(request):
     if request.method == 'POST':
         item_id = request.POST.get('id')
@@ -24,7 +32,7 @@ def toggle_grocery_item(request):
         item.completed = not item.completed
         item.save()
 
-        row_html = render_to_string("mealplan/item_list_item.html", {"item": item})
+        row_html = render_to_string("mealplan/groceries/item_list_item.html", {"item": item})
         return JsonResponse({
             "completed": item.completed,
             "html": row_html,
@@ -35,31 +43,33 @@ def toggle_grocery_item(request):
 
 
 
-class GroceryListView(FormMixin, ListView):
+class GroceryListView(ListView):
     model = GroceryItem
-    template_name = 'mealplan/grocery_list.html'
+    template_name = 'mealplan/meal_list.html'
     context_object_name = 'items'
-    form_class = GroceryItemForm
-    success_url = reverse_lazy('grocery_list')
+    success_url = reverse_lazy('meal-plan')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['active_items'] = GroceryItem.objects.filter(completed=False)
         context['completed_items'] = GroceryItem.objects.filter(completed=True)
 
-        for item in GroceryItem.objects.all():
-            print(item.title, item.completed)
-
-        if 'form' not in context:
-            context['form'] = self.get_form()
         return context
 
-    def post(self, request, *args, **kwargs):
-        form = self.get_form()
-        if form.is_valid():
-            form.save()
-            return self.form_valid(form)
-        return self.form_invalid(form)
+
+
+@require_POST
+def grocery_add(request):
+    title = request.POST.get('title')
+    if title:
+        item = GroceryItem.objects.create(title=title)
+        return JsonResponse({
+            'success': True,
+            'id': item.id,
+            'title': item.title,
+            'completed': item.completed
+        })
+    return JsonResponse({'success': False, 'error': 'Missing title'})
 
 
 class GroceryDeleteView(DeleteView):
