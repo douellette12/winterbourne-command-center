@@ -1,0 +1,44 @@
+body {
+  overflow-x: hidden;
+}
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  background-color: #343a40;
+  padding-top: 1rem;
+  z-index: 1040;
+  transition: transform 0.3s ease;
+}
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  display: block;
+}
+.sidebar a:hover {
+  background-color: #495057;
+}
+
+.main-content {
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.show {
+    transform: translateX(0);
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+.text-decoration-line-through {
+  transition: all 0.2s ease;
+}

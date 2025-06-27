@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}LAN Devices{% endblock %}
+{% block toolbar_title %}LAN Devices{% endblock %}
+{% block toolbar_actions %}
+<form method="post" action="{% url 'scan_network' %}" style="display: inline;" id="scan-form">
+  {% csrf_token %}
+  <button class="btn btn-sm btn-outline-primary" type="submit" id="scan-btn">
+    <i class="bi bi-binoculars"></i> Scan Network
+  </button>
+</form>
+{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Winterbourne LAN Phonebook</h2>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>IP Address</th>
+          <th>MAC</th>
+          <th>Hostname</th>
+          <th>Custom Name</th>
+          <th>Last Seen</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for device in devices %}
+        <tr>
+          <td>{{ device.ip_address }}</td>
+          <td>{{ device.mac_address }}</td>
+          <td>{{ device.hostname }}</td>
+          <td>{{ device.custom_name }}</td>
+          <td>{{ device.last_seen }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="{% static 'js/network.js' %}"></script>
+{% endblock %}
